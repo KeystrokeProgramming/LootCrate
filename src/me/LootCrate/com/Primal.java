@@ -32,7 +32,7 @@ public class Primal extends JavaPlugin {
 		getCommand("startdrops").setExecutor(new SetLootCommand());
 		getCommand("stopdrops").setExecutor(new SetLootCommand());
 	}
-
+	//Save Config
 	public static void saveConfigs() {
 		try{
 			cf.save(clanFile);
@@ -41,7 +41,7 @@ public class Primal extends JavaPlugin {
 			e.printStackTrace();
 		}
 	}
-
+	//Start Timer
 	public static void startLoot(final Player p) {
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Primal.instance, new Runnable() {
 			public void run() {
@@ -49,7 +49,7 @@ public class Primal extends JavaPlugin {
 			}
 		}, 0, Methods.duration * 20);
 	}
-
+	//Stop loot, cancel task
 	public static void stopLoot() {
 		Bukkit.getServer().getScheduler().cancelAllTasks();
 	}
